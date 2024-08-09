@@ -1,20 +1,44 @@
-# Image-Classification-using-Convolutional-Neural-Networks
-In this project, I will build and train a convolutional neural network (CNN) to classify images of dogs and cats. I will use the PyTorch deep learning library and the Cats vs Dogs dataset from Kaggle.
+# Image Classification using Convolutional Neural Networks
 
-Step 1: Install PyTorch and other dependencies
-First, you will need to install PyTorch and other dependencies. You can do this by running the following command:
-pip install torch torchvision numpy matplotlib tqdm
+This project involves building and training a Convolutional Neural Network (CNN) to classify images of dogs and cats using the PyTorch deep learning library. The dataset used is the popular Cats vs Dogs dataset from Kaggle.
 
-Step 2: Download the Cats vs Dogs dataset
-Next, you will need to download the Cats vs Dogs dataset from Kaggle (https://www.kaggle.com/c/dogs-vs-cats/data). The dataset consists of 25,000 images of dogs and cats, split into a training set and a test set.
+## Project Overview
 
-Step 3: Preprocess the data
-Before you can use the data to train your CNN, you will need to preprocess it. This involves splitting the data into training and validation sets, and normalizing the pixel values of the images. 
+In this project, we perform the following steps:
 
-Step 4: Define the CNN model
-Next, you will define the CNN model using PyTorch. You can use a pre-trained model such as VGG16 or ResNet, or you can define your own CNN from scratch. 
+1. **Install Dependencies**
+   - Install PyTorch and other necessary libraries by running:
+     ```bash
+     pip install torch torchvision numpy matplotlib tqdm
+     ```
 
-Step 5: Train the model
-To train the model, you will need to define an optimizer and a loss function, and then call the fit method of the model object and pass it the training data and labels. You can also specify the number of epochs (iterations over the entire dataset) and the batch size (the number of samples per gradient update) to use during training.
+2. **Download the Dataset**
+   - Download the Cats vs Dogs dataset from Kaggle:
+     ```bash
+     kaggle competitions download -c dogs-vs-cats -p data/cats_vs_dogs/
+     ```
 
-Step 6: Evaluate the model: Once the model has been trained, you can evaluate its performance on the test data by calling the 'evaluate' method.
+3. **Preprocess the Data**
+   - Preprocess the data, which includes:
+     - Splitting the dataset into training and validation sets.
+     - Normalizing the pixel values of the images.
+     - Organizing the dataset into a suitable directory structure.
+
+   This step is handled by the script `scripts/data_preprocessing.py`. To run the script, use:
+   ```bash
+   python scripts/data_preprocessing.py
+
+4. **Define the CNN Model**
+   - The CNN model architecture is defined in `models/cnn_model.py`. The model can be custom-built or you can fine-tune a pre-trained model like VGG16.
+
+5. **Train the Model**
+   - Train the model by running `scripts/train_model.py`. This script:
+     - Defines an optimizer and a loss function.
+     - Iterates over the dataset for a specified number of epochs.
+     - Saves the trained model to disk.
+  To run the script, use:
+  python scripts/train_model.py
+6. **Evaluate the Model**
+   - Evaluate the model's performance on a test dataset by running `scripts/evaluate_model.py`. This script will load the trained model and calculate the accuracy on the test data.
+   To run the script, use:
+   python scripts/evaluate_model.py
