@@ -46,3 +46,7 @@ In this project, we perform the following steps:
    ```bash
    python scripts/evaluate_model.py
    ```
+
+## References
+
+This project was inspired by and references the [Dogs vs. Cats Classification (VGG16 Fine Tuning) Notebook on Kaggle](https://www.kaggle.com/code/bulentsiyah/dogs-vs-cats-classification-vgg16-fine-tuning/notebook).
