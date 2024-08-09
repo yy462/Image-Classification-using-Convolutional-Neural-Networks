@@ -1,5 +1,5 @@
 import torch
-from models.cnn_model import CNNModel
+from models.cnn_model import VGG16FineTune
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import torch.optim as optim
@@ -30,7 +30,7 @@ train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Model
-model = CNNModel()
+model = VGG16FineTune(num_classes=2)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
@@ -56,7 +56,7 @@ for epoch in range(EPOCHS):
     print(f"Epoch [{epoch+1}/{EPOCHS}], Loss: {running_loss/len(train_loader):.4f}")
 
 # Save the model
-torch.save(model.state_dict(), 'models/cnn_model.pth')
+torch.save(model.state_dict(), 'models/vgg16_finetune.pth')
 
 # Evaluate the model
 model.eval()

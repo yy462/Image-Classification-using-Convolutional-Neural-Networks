@@ -27,7 +27,7 @@ In this project, we perform the following steps:
    This step is handled by the script `scripts/data_preprocessing.py`. To run the script, use:
    ```bash
    python scripts/data_preprocessing.py
-
+   ```
 4. **Define the CNN Model**
    - The CNN model architecture is defined in `models/cnn_model.py`. The model can be custom-built or you can fine-tune a pre-trained model like VGG16.
 
@@ -37,8 +37,12 @@ In this project, we perform the following steps:
      - Iterates over the dataset for a specified number of epochs.
      - Saves the trained model to disk.
   To run the script, use:
-  python scripts/train_model.py
+   ```bash
+   python scripts/train_model.py
+   ```
 6. **Evaluate the Model**
    - Evaluate the model's performance on a test dataset by running `scripts/evaluate_model.py`. This script will load the trained model and calculate the accuracy on the test data.
    To run the script, use:
+   ```bash
    python scripts/evaluate_model.py
+   ```
